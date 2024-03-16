@@ -1,0 +1,56 @@
+1. Create a hover effect on an element where it changes its opacity using jQuery.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hover Effect with jQuery</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+ .hover-element {
+ width: 200px;
+ height: 200px;
+ background-color: blue;
+ opacity: 1;
+ transition: opacity 0.3s ease;
+ }
+</style>
+</head>
+<body>
+<div class="hover-element"></div>
+<script>
+ $(document).ready(function() {
+ $(".hover-element").hover(function() {
+ $(this).css("opacity", "0.5");
+ }, function() {
+ $(this).css("opacity", "1");
+ });
+ });
+</script>
+</body>
+</html>
+
+2. Create one textarea and one button. On click of the button the length of text entered
+inside the textarea will be displayed
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Text Length Counter</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<textarea id="textInput" rows="4" cols="50"></textarea><br><br>
+<button id="countButton">Count Text Length</button><br><br>
+<div id="result"></div>
+<script>
+$(document).ready(function() {
+ $("#countButton").click(function() {
+ var textLength = $("#textInput").val().length;
+$("#result").text("Length of text: " + textLength + " characters");
+ });
+});
+</script>
+</body>
+</html>
